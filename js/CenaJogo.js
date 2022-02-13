@@ -27,7 +27,7 @@ export default class CenaJogo extends Cena {
         this.configuraMapa(mapa1);
         
         const cena = this;
-        const pc  = new Sprite({ x: 5 * 14,   y: 2 * 18  });
+        const pc  = new Sprite({ x: 5 * 14,   y:2 * 18 });
         pc.tags.add("pc");
         pc.controlar = function (dt) {
             if (cena.input.comandos.get("MOVE_ESQUERDA")) {
@@ -49,14 +49,24 @@ export default class CenaJogo extends Cena {
         this.adicionar(pc);
         
         function perseguePC(dt) {
-            this.vx = 25 * Math.sign(pc.x - this.x);
-            this.vy = 25 * Math.sign(pc.y - this.y);
+            this.vx = 20 * Math.sign(pc.x - this.x);
+            this.vy = 20 * Math.sign(pc.y - this.y);
         }
 
-        const en1 = new Sprite({ x: 2 * 14, y: 3 * 18 ,color: "red", controlar: perseguePC, tags: ["enemy"] });
+        const en1 = new Sprite({ x: 115 ,y: 150 ,color: "red", controlar: perseguePC, tags: ["enemy"] });
         this.adicionar(en1);
 
-        this.adicionar( new Sprite({ h: 10 , w: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 201, y: 70 , color: "red", controlar: perseguePC, tags: ["enemy"] }));
+        this.adicionar(new Sprite({ x: 302, y: 160, color: "red", controlar: perseguePC, tags: ["enemy"] }));
+
+        this.adicionar(new Sprite({ x: 150, y: 140 ,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 300, y: 210,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 150, y: 70 ,w: 10 , h: 10, color: "yellow ", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 250, y: 300,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+
+        this.adicionar(new Sprite({ x: 600, y: 140 ,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 330, y: 210,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 470, y: 300,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
        
     }
     
