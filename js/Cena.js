@@ -7,6 +7,8 @@ export default class Cena {
         this.assets = assets;
         this.game = null;
         this.preparar();
+        this.score = 0;
+        this.vidas = 3;
     }
     desenhar() {
         this.ctx.fillStyle = "lightblue";
@@ -20,9 +22,12 @@ export default class Cena {
                 sprite.desenhar(this.ctx);
                 sprite.aplicaRestricoes();
             }
-        }
+        } 
         this.ctx.fillStyle = "yellow";
-        this.ctx.fillText(this.assets?.progresso(), 10, 20);
+        this.ctx.fillText("Score: " + this.score , 30, 20);
+        this.ctx.fillStyle = "red";
+        this.ctx.fillText("Vidas: " + this.vidas , 180, 20);
+
     }
     adicionar(sprite) {
         sprite.cena = this;
