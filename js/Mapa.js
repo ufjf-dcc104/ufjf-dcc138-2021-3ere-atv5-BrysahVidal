@@ -21,11 +21,11 @@ export default class Mapa {
                         ctx.fillStyle = "grey";
                         ctx.lineWidth = 1;
                         ctx.strokeStyle = "black";
-                            break;
-                    case 2:
-                        ctx.fillStyle = "red";
-                        ctx.lineWidth = 2;
-                        ctx.strokeStyle = "orange";
+                        break;
+                        case 2:
+                            ctx.fillStyle = "red";
+                            ctx.lineWidth = 2;
+                            ctx.strokeStyle = "orange";
                             break;    
                     default:
                         ctx.fillStyle = "black";

@@ -1,6 +1,6 @@
 export default class Sprite {
-    /*É responsável por modelar algo que se move na tela.*/
-    constructor({ x = 100, y = 100, w = 30, h = 30, color = "white", vx = 0, vy = 0, controlar = ()=> {}, tags = []} = {}) {
+    /*É responsável por modelar algo que move na tela.*/
+    constructor({ x = 100, y = 100, w = 16, h = 16, color = "white", vx = 0, vy = 0, controlar = ()=> {}, tags = []} = {}) {
         this.x = x;
         this.y = y;
         this.vx = vx;
@@ -76,6 +76,7 @@ export default class Sprite {
                 this.cena.ctx.strokeRect(tile.x - SIZE/2, tile.y - SIZE/2, SIZE, SIZE);
                 if(this.colidiuCom(tile)){
                     this.vx = 0;
+                    this.vy = 0;
                     this.x = tile.x-tile.w/2 - this.w/2 - 1;
                 }
             }
