@@ -1,6 +1,6 @@
 import Cena from "./Cena.js";
 
-export default class CenaFim extends Cena{
+export default class CenaFimGameOver extends Cena{
     desenhar() {
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);

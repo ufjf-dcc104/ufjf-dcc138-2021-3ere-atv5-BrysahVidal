@@ -9,7 +9,7 @@ export default class CenaJogo extends Cena {
         if (a.tags.has("pc") && b.tags.has("enemy")) {
             if(this.vidas == 1)
             {
-                this.game.selecionaCena("fim");
+                this.game.selecionaCena("gameover");
             }else{
             this.aRemover.push(b);
             this.vidas--;
@@ -18,7 +18,7 @@ export default class CenaJogo extends Cena {
         else if (a.tags.has("pc") && b.tags.has("coin")) {
             if(this.score == 5)
             {
-                this.game.selecionaCena("fim");
+                this.game.selecionaCena("vitoria");
             }else{
                 this.aRemover.push(b);
                 this.score++;
