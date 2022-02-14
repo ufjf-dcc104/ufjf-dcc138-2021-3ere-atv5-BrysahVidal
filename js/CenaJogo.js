@@ -5,17 +5,24 @@ import modeloMapa1 from "../maps/mapa1.js"
 
 export default class CenaJogo extends Cena {
     quandoColidir(a, b) {
-        
-        if (a.tags.has("pc") && b.tags.has("enemy") && this.vidas == 1) {
-            this.game.selecionaCena("fim");
-        }
-        else if (a.tags.has("pc") && b.tags.has("enemy")) {
+
+        if (a.tags.has("pc") && b.tags.has("enemy")) {
+            if(this.vidas == 1)
+            {
+                this.game.selecionaCena("fim");
+            }else{
             this.aRemover.push(b);
             this.vidas--;
+            }
         }
         else if (a.tags.has("pc") && b.tags.has("coin")) {
-            this.aRemover.push(b);
-            this.score++;
+            if(this.score == 5)
+            {
+                this.game.selecionaCena("fim");
+            }else{
+                this.aRemover.push(b);
+                this.score++;
+            }
         }
         
     }
@@ -51,6 +58,7 @@ export default class CenaJogo extends Cena {
         function perseguePC(dt) {
             this.vx = 20 * Math.sign(pc.x - this.x);
             this.vy = 20 * Math.sign(pc.y - this.y);
+            
         }
 
         const en1 = new Sprite({ x: 115 ,y: 150 ,color: "red", controlar: perseguePC, tags: ["enemy"] });
