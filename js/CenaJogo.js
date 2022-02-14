@@ -15,17 +15,31 @@ export default class CenaJogo extends Cena {
             this.assets.play("waka");
             this.aRemover.push(b);
             this.vidas--;
-            }
+            
+        }
         }
         else if (a.tags.has("pc") && b.tags.has("coin")) {
-            if(this.score == 5)
+            if(this.score == 100)
             {
                 this.assets.play("abertura");
                 this.game.selecionaCena("vitoria");
             }else{
+                if(this.score % 4 == 0)
+                {
+                            for (let i = 0; i < this.sprites.length; i++) {
+                                if(this.sprites[i].tags.has("enemy"))
+                                {
+                                    this.sprites[i].vx += 5;
+                                    this.sprites[i].vy += 5;
+                                }
+                                
+                            }
+                }
                 this.assets.play("moeda");
                 this.aRemover.push(b);
                 this.score++;
+               
+                
             }
         }
         
@@ -58,12 +72,14 @@ export default class CenaJogo extends Cena {
             } 
         }
         this.adicionar(pc);
-        
-        function perseguePC(dt) {
-            this.vx = 20 * Math.sign(pc.x - this.x);
-            this.vy = 20 * Math.sign(pc.y - this.y);
+
+       
+        function perseguePC(dt) {            
+            this.vx = 10 * Math.sign(pc.x - this.x) - 0.2 * this.vx;
+            this.vy = 10 * Math.sign(pc.y - this.y) - 0.2 * this.vy;
             
         }
+
 
         const en1 = new Sprite({ x: 145 ,y:  150 ,color: "red", controlar: perseguePC, tags: ["enemy"] });
         this.adicionar(en1);
