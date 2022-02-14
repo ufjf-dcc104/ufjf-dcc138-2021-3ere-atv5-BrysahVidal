@@ -23,10 +23,10 @@ export default class Cena {
                 sprite.aplicaRestricoes();
             }
         } 
-        this.ctx.fillStyle = "yellow";
+        this.ctx.fillStyle = "black";
         this.ctx.fillText("Score: " + this.score , 30, 20);
         this.ctx.fillStyle = "red";
-        this.ctx.fillText("Vidas: " + this.vidas , 180, 20);
+        this.ctx.fillText("Vidas: " + this.vidas , 210, 20);
 
     }
     adicionar(sprite) {
@@ -109,5 +109,7 @@ export default class Cena {
         this.idAnim = null;
         this.mapa = null;
         this.rodando = true;
+        this.score = 0;
+        this.vidas = 3;
     }
   }

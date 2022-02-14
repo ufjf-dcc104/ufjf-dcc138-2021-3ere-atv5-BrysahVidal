@@ -23,9 +23,7 @@ export default class Mapa {
                         ctx.strokeStyle = "black";
                         break;
                         case 2:
-                            ctx.fillStyle = "red";
-                            ctx.lineWidth = 2;
-                            ctx.strokeStyle = "orange";
+                            ctx.fillStyle = "white ";
                             break;    
                     default:
                         ctx.fillStyle = "black";

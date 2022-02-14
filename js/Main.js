@@ -5,15 +5,18 @@ import Game from "./Game.js";
 import CenaJogo from "./CenaJogo.js";
 import CenaCarregando from "./CenaCarregando.js";
 import CenaFimGameOver from "./CenaFimGameOver.js";
-import CenaFimWin from "../CenaFimWin.js";
+import CenaFimWin from "./CenaFimWin.js";
 
 const input = new InputManager();
 const mixer = new Mixer(10);
 const assets = new AssetManager(mixer);
 
 
-assets.carregaAudio("moeda", "assets/coin.wav");
-assets.carregaAudio("boom", "assets/boom.wav");
+assets.carregaAudio("morte","assets/pacman_dies.mp3");
+assets.carregaAudio("moeda","assets/moeda.mp3");
+assets.carregaAudio("abertura","assets/abertura.mp3");
+assets.carregaAudio("waka","assets/waka.mp3");
+
 
 
 const canvas = document.querySelector("canvas");

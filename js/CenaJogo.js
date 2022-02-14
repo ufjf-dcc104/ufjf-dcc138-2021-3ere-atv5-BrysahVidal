@@ -9,8 +9,10 @@ export default class CenaJogo extends Cena {
         if (a.tags.has("pc") && b.tags.has("enemy")) {
             if(this.vidas == 1)
             {
+                this.assets.play("morte");
                 this.game.selecionaCena("gameover");
             }else{
+            this.assets.play("waka");
             this.aRemover.push(b);
             this.vidas--;
             }
@@ -18,8 +20,10 @@ export default class CenaJogo extends Cena {
         else if (a.tags.has("pc") && b.tags.has("coin")) {
             if(this.score == 5)
             {
+                this.assets.play("abertura");
                 this.game.selecionaCena("vitoria");
             }else{
+                this.assets.play("moeda");
                 this.aRemover.push(b);
                 this.score++;
             }
@@ -61,19 +65,19 @@ export default class CenaJogo extends Cena {
             
         }
 
-        const en1 = new Sprite({ x: 115 ,y: 150 ,color: "red", controlar: perseguePC, tags: ["enemy"] });
+        const en1 = new Sprite({ x: 145 ,y:  150 ,color: "red", controlar: perseguePC, tags: ["enemy"] });
         this.adicionar(en1);
 
         this.adicionar(new Sprite({ x: 201, y: 70 , color: "red", controlar: perseguePC, tags: ["enemy"] }));
         this.adicionar(new Sprite({ x: 302, y: 160, color: "red", controlar: perseguePC, tags: ["enemy"] }));
 
         this.adicionar(new Sprite({ x: 150, y: 140 ,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
-        this.adicionar(new Sprite({ x: 300, y: 210,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 300, y: 280,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
         this.adicionar(new Sprite({ x: 150, y: 70 ,w: 10 , h: 10, color: "yellow ", tags: ["coin"] }));
         this.adicionar(new Sprite({ x: 250, y: 300,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
 
         this.adicionar(new Sprite({ x: 600, y: 140 ,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
-        this.adicionar(new Sprite({ x: 330, y: 210,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
+        this.adicionar(new Sprite({ x: 360, y: 210,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
         this.adicionar(new Sprite({ x: 470, y: 300,w: 10 , h: 10, color: "yellow", tags: ["coin"] }));
        
     }

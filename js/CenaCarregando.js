@@ -18,7 +18,9 @@ export default class CenaCarregando extends Cena{
         this.dt = (t - this.t0) / 1000;
 
         if(this.assets.acabou()){
+            
             if(this.input.comandos.get("PROXIMA CENA")){
+                this.assets.play("abertura");               
                 this.game.selecionaCena("jogo");
                 return;
             }
