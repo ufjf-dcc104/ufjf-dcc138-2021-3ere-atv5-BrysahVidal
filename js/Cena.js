@@ -9,6 +9,7 @@ export default class Cena {
         this.preparar();
         this.score = 0;
         this.vidas = 3;
+        this.dificuldade = 1;
     }
     desenhar() {
         this.ctx.fillStyle = "lightblue";
@@ -111,5 +112,6 @@ export default class Cena {
         this.rodando = true;
         this.score = 0;
         this.vidas = 3;
+        this.dificuldade = 1;
     }
   }
