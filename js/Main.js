@@ -4,7 +4,6 @@ import InputManager from "./InputManager.js";
 import Game from "./Game.js";
 import CenaJogo from "./CenaJogo.js";
 import CenaCarregando from "./CenaCarregando.js";
-import CenaFim from "./CenaFim.js";
 import CenaFimGameOver from "./CenaFimGameOver.js";
 import CenaFimWin from "../CenaFimWin.js";
 
